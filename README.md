@@ -17,7 +17,7 @@ To get started with Django CRUDify, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/django-crudify.git
+   git clone https://github.com/ezraopande/django-crudify.git
    cd django-crudify
 
 
