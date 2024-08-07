@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% load static %} {% block body %}
+
+<div>
+  {% for data in data %}
+
+  <p>{{ data.name}}</p>
+
+  {% endfor %}
+  <br /><br /><br /><br />
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi
+    consequuntur cum dolore error est ex, explicabo fuga fugit minima
+    necessitatibus nemo neque nobis non quo repellat suscipit tempora, totam.
+  </p>
+</div>
+
+<h3 class="one">Disclaimer!</h3>
+<p>You are not other developer. You're a Django developer</p>
+
+<img src="{% static 'images/logo.png' %}" alt="all" />
+
+<button class="btn btn-success">Button</button>
+
+<input type="text" class="form-control" />
+
+{% endblock %}

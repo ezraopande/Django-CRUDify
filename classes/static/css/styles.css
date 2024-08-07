@@ -1,0 +1,10 @@
+.one{
+    color: red;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*any minute you modify any static file, you must restart the server*/

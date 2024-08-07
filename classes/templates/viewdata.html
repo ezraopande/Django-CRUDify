@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+    <div class="container">
+
+    <h2 class="mt-5">Students - Tabular</h2>
+
+        <table class="table mt-2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+        <th scope="col">Image</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for dd in data %}
+
+                  {% csrf_token %}
+      <tr>
+         <th scope="row">{{ dd.id }}</th>
+         <td>{{ dd.name }}</td>
+         <td>{{ dd.email }}</td>
+         <td>{{ dd.age }}</td>
+         <td>
+             <img src="http://127.0.0.1:8000/media/{{ dd.image }}" alt="{{ dd.name }}" width="70">
+         </td>
+          <td>
+              <a class="btn btn-warning" href="edit/{{ dd.id }}">Edit</a>
+          </td>
+          <td>
+              <a class="btn btn-danger" href="/delete/{{ dd.id }}">Delete</a>
+
+          </td>
+
+
+
+      </tr>
+
+  {% endfor %}
+
+  </tbody>
+
+</table>
+
+    <h2 class="mt-5">Students - Grids</h2>
+
+    <div class="row">
+
+        {% for dd in data %}
+
+        <div class="col-md-3">
+            <div class="card mb-3">
+             <img src="http://127.0.0.1:8000/media/{{ dd.image }}" class="card-img-top" alt="{{ dd.name }}">
+                <div class="card-body">
+                <p class="card-text">{{ dd.name }}</p>
+                    <p class="card-text">{{ dd.email }}</p>
+                    <p class="card-text">{{ dd.age }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    <p class="card-text">{{ dd.name }}</p>
+    </div>
+
+
+
+
+
+    </div>
+
+<br><br><br><br><br><br><br>
+{% endblock %}
+
